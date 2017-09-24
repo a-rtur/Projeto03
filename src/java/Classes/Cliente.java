@@ -4,7 +4,7 @@ public class Cliente {
     private String nome;
     private String cpf;
     private String rg;
-    private String endereço;
+    private String endereco;
     private String telefone;
     private String email;
 
@@ -32,12 +32,12 @@ public class Cliente {
         this.rg = rg;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereço(String endereço) {
-        this.endereço = endereço;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getTelefone() {
