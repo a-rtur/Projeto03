@@ -29,13 +29,13 @@
         <div id ="equipe" class="recipiente-fluido"
   
             <div class="marcadores de posição de linha col-md-offset-2">              
-                <img src="imagens/Artur.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
+                <img src="assets/imagens/Artur.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
                 <h2>Artur Xavier</h2>
                 
-                <img src="imagens/Gabriela.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
+                <img src="assets/imagens/Gabriela.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
                 <h2>Gabriela Duarte</h2>
                  
-                <img src="imagens/Gustavo.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
+                <img src="assets/imagens/Gustavo.jpg" width="200" height="200" class="img-circle" alt="miniatura do marcador de posição genérico"/>
                 <h2>Gustavo Cavalcante</h2>
             </div>
         <%@include file="WEB-INF/jspf/rodape.jspf" %>
