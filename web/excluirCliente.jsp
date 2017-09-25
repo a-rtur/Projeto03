@@ -65,7 +65,7 @@
                     }
                     else {
         %>
-        <h3 style="text-align: center">Cliente não encontrado.<h3>
+        <h3 style="text-align: center">Cliente não encontrado.</h3>
         <%    
                     }
                 }
@@ -113,13 +113,17 @@
                     }
                     else {
         %>
-        <h3 style="text-align: center">Não há clientes cadastrados.<h3>
+        <h3 style="text-align: center">Não há clientes cadastrados.</h3>
         <%    
                     }
                 }
             }
             catch (Exception ex) {
-                
+        %>
+                <script>
+                    alert("Erro inesperado.");
+                </script>
+        <%  
             }
         %>
         </div>
