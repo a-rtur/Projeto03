@@ -8,6 +8,68 @@ public class Cliente {
     private String telefone;
     private String email;
 
+    public static boolean verificarCpf(String cpf){
+        boolean retorno = false;
+        for(int i = 0; i < Banco.getCliente().size(); i++) {
+            if(Banco.getCliente().get(i).getCpf().equals(cpf)) {
+                i = Banco.getCliente().size() + 1;
+                retorno = true;
+            }
+            else {
+                retorno = false;
+            }
+        }
+        return retorno;
+    }
+    
+    public static boolean verificarRg(String rg){
+        boolean retorno = false;
+        for(int i = 0; i < Banco.getCliente().size(); i++) {
+            if(Banco.getCliente().get(i).getCpf().equals(rg)) {
+                i = Banco.getCliente().size() + 1;
+                retorno = true;
+            }
+            else {
+                retorno = false;
+            }
+        }
+        return retorno;
+    }
+  
+    public static void cadastrarCliente(String nome, String cpf, String rg, String email, String endereco, String telefone){
+        Cliente c = new Cliente();
+        c.setNome(nome);
+        c.setEmail(email);
+        c.setTelefone(telefone);
+        c.setCpf(cpf);
+        c.setRg(rg);
+        c.setEndereco(endereco);
+        Banco.getCliente().add(c);
+    }
+    
+    public static int pesquisarBanco(int valor, String pesquisa){
+        int retorno = -1;
+        if(Banco.getCliente().get(valor).getNome().equals(pesquisa)) {
+            retorno = valor;
+        }
+        else if(Banco.getCliente().get(valor).getCpf().equals(pesquisa)) {
+            retorno = valor;
+        }
+        else if(Banco.getCliente().get(valor).getRg().equals(pesquisa)) {
+            retorno = valor;
+        }
+        else if(Banco.getCliente().get(valor).getEmail().equals(pesquisa)) {
+            retorno = valor;
+        }
+        else if(Banco.getCliente().get(valor).getTelefone().equals(pesquisa)) {
+            retorno = valor;
+        }
+        else if(Banco.getCliente().get(valor).getEndereco().equals(pesquisa)) {
+            retorno = valor;
+        }
+        return retorno;
+    }
+    
     public String getNome() {
         return nome;
     }
