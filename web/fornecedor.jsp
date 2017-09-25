@@ -28,7 +28,7 @@
                    f.setNome(nome);
                    f.setRazao(razao);
                    f.setCnpj(cnpj);
-                   f.setEndereço(endereço);
+                   f.setEndereco(endereço);
                    f.setTelefone(telefone);
                    f.setEmail(email);
                    Banco.getFonecedor().add(f);
@@ -78,11 +78,9 @@
             <%
                for (int i = 0; i<Banco.getFonecedor().size(); i++){
                    Fornecedor f = Banco.getFonecedor().get(i);
-               } 
             %>
                        
-                   <tr>
-                
+            <tr>
                 <td><%=f.getNome()%></td>
                 <td><%=f.getRazao()%></td>
                 <td><%=f.getCnpj()%></td>
