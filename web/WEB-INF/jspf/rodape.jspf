@@ -1,0 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<footer class = "container-fluid text-center">
+  <p>@Desenvolvido por: Artur Xavier, Gabriela Duarte e Gustavo Cavalcanti </ p>
+</ footer>
+
