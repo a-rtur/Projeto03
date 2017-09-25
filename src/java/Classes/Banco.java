@@ -10,11 +10,12 @@ public class Banco {
         }
         return clientes;
     }
+    
     private static ArrayList<Fornecedor> fornecedores;
     public static ArrayList<Fornecedor> getFonecedor(){
         if (fornecedores==null){
             fornecedores = new ArrayList<>();
         }
         return fornecedores;
-   }
+    }
 }
