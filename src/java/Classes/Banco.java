@@ -14,7 +14,7 @@ public class Banco {
         return clientes;
     }
     
-    public static ArrayList<fornecedor> getFonecedor(){
+    public static ArrayList<fornecedor> getFornecedor(){
         if (fornecedores==null){
             fornecedores = new ArrayList<>();
         }
