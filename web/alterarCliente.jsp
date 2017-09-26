@@ -1,5 +1,3 @@
-<%@page import="java.util.Scanner"%>
-<%@page import="java.io.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Classes.Cliente"%>
 <%@page import="Classes.Banco"%>
@@ -32,10 +30,10 @@
         <%
             int existente = 0;
             try {
-                String pCpf = request.getParameter("textCpf");
-                if(request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0 && Global.isNumeric(pCpf) = true) {
+                String tCpf = request.getParameter("textCpf");
+                if(request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0 && Global.isNumeric(tCpf) == true) {
                     for(int i = 0; i < Banco.getCliente().size(); i++) {
-                        if(Banco.getCliente().get(i).getCpf().equals(pCpf)) {
+                        if(Banco.getCliente().get(i).getCpf().equals(tCpf)) {
     %>
                             <fieldset>
                                 <div id="titulo"><h3>Alterar Cadastro</h3></div>
@@ -59,7 +57,7 @@
                             Banco.setIndex(i);
                             existente = 1;
                         }
-                        else if ((i == Banco.getCliente().size() -1) && existente == 0) {
+                        else if((i == Banco.getCliente().size() -1) && existente == 0) {
     %>
                             <script>
                                 alert("CPF não encontrado.");
@@ -75,7 +73,7 @@
                             </script>
         <%
                 }
-                else if(Global.isNumeric(pCpf) = false) { 
+                else if(Global.isNumeric(tCpf) == false && request.getParameter("pesquisar") != null) {
         %>
                     <script>
                         alert("Digite apenas números.");
