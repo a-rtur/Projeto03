@@ -32,11 +32,11 @@
         <%
             int existente = 0;
             try {
-                if(request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0) {
-                    String pCpf = request.getParameter("textCpf");
+                String pCpf = request.getParameter("textCpf");
+                if(request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0 && Global.isNumeric(pCpf) = true) {
                     for(int i = 0; i < Banco.getCliente().size(); i++) {
                         if(Banco.getCliente().get(i).getCpf().equals(pCpf)) {
-        %>
+    %>
                             <fieldset>
                                 <div id="titulo"><h3>Alterar Cadastro</h3></div>
                                 <form>
@@ -55,24 +55,31 @@
                                     <center><input type="submit" name="editar" value="Alterar" class="btn btn-dark"/></center>
                                 </form>
                             </fieldset>
-        <%
+    <%
                             Banco.setIndex(i);
                             existente = 1;
-			}
+                        }
                         else if ((i == Banco.getCliente().size() -1) && existente == 0) {
-        %>
+    %>
                             <script>
                                 alert("CPF não encontrado.");
                             </script>
-        <%
+    <%
                         }
-                    }
+                    }   
                 }
-                else if(Banco.getCliente().size() == 0) {
+                else if(Banco.getCliente().size() == 0 && request.getParameter("pesquisar") != null) {
         %>
                             <script>
                                 alert("Não há clientes cadastrados.");
                             </script>
+        <%
+                }
+                else if(Global.isNumeric(pCpf) = false) { 
+        %>
+                    <script>
+                        alert("Digite apenas números.");
+                    </script>
         <%
                 }
                 else if(request.getParameter("editar") != null) {
@@ -87,7 +94,28 @@
                         String rgAntigo = Banco.getCliente().get(Banco.getIndex()).getRg();
                         Banco.getCliente().get(Banco.getIndex()).setCpf("reset");
                         Banco.getCliente().get(Banco.getIndex()).setRg("reset");
-                        if (Cliente.verificarCpf(cpf) == true) {
+                        if (Global.isNumeric(cpf) == false){
+        %>
+                            <script>
+                                alert("Digite apenas números no campo 'CPF'.");
+                            </script>
+        <%
+                        }
+                        else if (Global.isNumeric(rg) == false){
+        %>
+                            <script>
+                                alert("Digite apenas números no campo 'RG'.");
+                            </script>
+        <%
+                        }
+                        else if (Global.isNumeric(telefone) == false){
+        %>
+                            <script>
+                                alert("Digite apenas números no campo 'Telefone'.");
+                            </script>
+        <%
+                        }
+                        else if (Cliente.verificarCpf(cpf) == true) {
                             Banco.getCliente().get(Banco.getIndex()).setCpf(cpfAntigo);
                             Banco.getCliente().get(Banco.getIndex()).setRg(rgAntigo);
         %>
@@ -133,7 +161,7 @@
             catch(Exception ex) {
         %>
                 <script>
-                    alert("Erro inesperado.");
+                    alert("Erro desconhecido.");
                 </script>
         <%
             }

@@ -26,7 +26,28 @@
                     String cpf = request.getParameter("cpf");
                     String rg = request.getParameter("rg");
                     String endereco = request.getParameter("endereco");
-                    if (Cliente.verificarCpf(cpf) == true) {                        
+                    if (Global.isNumeric(cpf) == false) {
+        %>
+                        <script>
+                            alert("Digite apenas números no campo 'CPF'.");
+                        </script>
+        <%                      
+                    }
+                    else if (Global.isNumeric(rg) == false) {
+        %>
+                        <script>
+                            alert("Digite apenas números no campo 'RG'.");
+                        </script>
+        <%                      
+                    }
+                    else if (Global.isNumeric(telefone) == false) {
+        %>
+                        <script>
+                            alert("Digite apenas números no campo 'Telefone'.");
+                        </script>
+        <%                      
+                    }
+                    else if (Cliente.verificarCpf(cpf) == true) {                        
         %>
                         <script>
                             alert("CPF já cadastrado.");
@@ -71,7 +92,7 @@
                     Endereço:<br/>
                     <input type="text" name="endereco" required maxlength="50"/><br/><br/>
                     Telefone:<br/>
-                    <input type="text" name="telefone" required maxlength="15"/><br/><br/>
+                    <input type="text" name="telefone" required maxlength="15" data-mask="(00) 0000-0000" data-mask-selectonfocus="true"/><br/><br/>
                     Email:<br/>
                     <input type="text" name="email" required maxlength="35"/><br/><br/>
                     <center><input type="submit" name="add" class="btn btn-dark" value="Adicionar"/></center>
