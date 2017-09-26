@@ -8,6 +8,18 @@ public class Cliente {
     private String telefone;
     private String email;
 
+    public static boolean isNumeric(String valor){
+        boolean isNumeric = false;
+        try {
+            int n = Integer.parseInt(valor);
+            isNumeric = true;
+        }
+        catch (Exception ex) {
+            isNumeric = false;
+        }
+        return isNumeric;
+    }
+    
     public static boolean verificarCpf(String cpf){
         boolean retorno = false;
         for(int i = 0; i < Banco.getCliente().size(); i++) {
