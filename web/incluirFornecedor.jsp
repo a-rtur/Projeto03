@@ -27,8 +27,7 @@
                     String endereco = request.getParameter("endereco");
                     String telefone = request.getParameter("telefone");
                     String email = request.getParameter("email");
-                    //Aletrar classe
-                   // if (fornecedor.verificarCnpj(cnpj) == true) {                        
+                    if (fornecedor.verificarCnpj(cnpj) == true) {                        
         %>
         
                         <script>
@@ -37,8 +36,7 @@
         <%           
                     }
                     else {
-                           // Alterar
-                        //fornecedor.cadastrarFornecedor(razao,nomef, cnpj, endereco, telefone, email);
+                        fornecedor.cadastrarFornecedor(razao,nomef, cnpj, endereco, telefone, email);
         %>
                         <script>
                             alert("Cadastro efetuado com sucesso.");
@@ -55,22 +53,22 @@
         <%
             }
         %>
-        <div id="conteudo">
+       <div id="conteudo">
             <fieldset>
-                <div id="titulo"><h3>Cadastro de Clientes</h3></div>
+                <div id="titulo"><h3>Cadastro de Fornecedores</h3></div>
                 <form>
-                    Nome:<br/>
-                    <input type="text" name="nome" required maxlength="50"/><br/><br/>
-                    CPF:<br/>
-                    <input type="text" name="cpf" required maxlength="11"/><br/><br/>
-                    RG:<br/>
-                    <input type="text" name="rg" required maxlength="13"/><br/><br/>
+                    Razão Social:<br/>
+                    <input type="text" name="razao" required maxlength="50"/><br/><br/>
+                    Nome Fantasia:<br/>
+                    <input type="text" name="nomef" required maxlength="50"/><br/><br/>
+                    CNPJ:<br/>
+                    <input type="text" name="cnpj" required maxlength="11"/><br/><br/>
+                    Email:<br/>
+                    <input type="text" name="email" required maxlength="35"/><br/><br/>
                     Endereço:<br/>
                     <input type="text" name="endereco" required maxlength="50"/><br/><br/>
                     Telefone:<br/>
                     <input type="text" name="telefone" required maxlength="15"/><br/><br/>
-                    Email:<br/>
-                    <input type="text" name="email" required maxlength="35"/><br/><br/>
                     <center><input type="submit" name="add" class="btn btn-dark" value="Adicionar"/></center>
                 </form>
             </fieldset>
