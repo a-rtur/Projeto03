@@ -27,16 +27,16 @@
                 <br/>
             </form>
         <%
-            int gerarIndice = 1;
             try {
-                if (request.getParameter("pesquisar") != null) {
+                boolean gerarIndice = true;
+                boolean achouValor = false;
+                if (request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0) {
                     String pesquisa = request.getParameter("pesquisa");
-                    if (Banco.getCliente().size() != 0) {
-                        for (int i = 0; i<Banco.getCliente().size(); i++) {
-                            if (Cliente.pesquisarBanco(i, pesquisa) != -1) {
-                                Cliente c = Banco.getCliente().get(i);
-                                if (gerarIndice == 1) {
-                                    gerarIndice = 0;
+                    for (int i = 0; i<Banco.getCliente().size(); i++) {
+                        if ((Cliente.pesquisarBanco(i, pesquisa) != -1) && gerarIndice == true) {
+                            Cliente c = Banco.getCliente().get(i);
+                            gerarIndice = false;
+                            achouValor = true;
         %>
         <table>
             <tr>
@@ -48,10 +48,6 @@
                 <th>Email</th>
                 <th style="width: 5%">Deletar</th>
             </tr>
-        <%
-                                }
-                                    
-        %>
             <tr>
                 <td><%=c.getNome()%></td>
                 <td><%=c.getCpf()%></td>
@@ -67,27 +63,56 @@
                 </td>
             </tr>
         <%
-                            }
-                            else if ((i == Banco.getCliente().size() - 1) && gerarIndice == 1) {
-        %>
-                                <script>
-                                    alert("Cliente não encontrado.")
-                                </script>
-        <%
-                            }
                         }
+                        else if ((Cliente.pesquisarBanco(i, pesquisa) != -1) && gerarIndice == false) {
+                            Cliente c = Banco.getCliente().get(i);
+        %>
+             <tr>
+                <td><%=c.getNome()%></td>
+                <td><%=c.getCpf()%></td>
+                <td><%=c.getRg()%></td>
+                <td><%=c.getEndereco()%></td>
+                <td><%=c.getTelefone()%></td>
+                <td><%=c.getEmail()%></td>
+                <td>
+                    <form>
+                        <input type="submit" class="btn btn-dark" value="Excluir" name="excluir"/>
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                    </form>
+                </td>
+            </tr>                 
+        <%
+                        }
+                        else if ((i == Banco.getCliente().size() - 1) && achouValor == false) {
+        %>
+        <script>
+            alert("Cliente não encontrado.");
+        </script>
+        <%
+                        }                     
+                    }
         %>
         </table>
         <%
-                    }
                 }
                 else if (request.getParameter("excluir") != null) {
                     int index = Integer.parseInt(request.getParameter("i"));
                     Banco.getCliente().remove(index);
-                    String pesquisa = request.getParameter("pesquisa");
                 }
-                else {
-                    if (Banco.getCliente().size() != 0) {
+                else if (Banco.getCliente().size() == 0 && request.getParameter("pesquisar") != null) {
+        %>
+        <h3 style="text-align: center">Não há clientes cadastrados</h3>
+        <script>
+            alert("Cliente não encontrado.");
+        </script>
+        <%
+                }
+                else if (Banco.getCliente().size() == 0) {
+        %>
+        <h3 style="text-align: center">Não há clientes cadastrados</h3>
+        <%
+                }
+                if (gerarIndice == true && Banco.getCliente().size() != 0) {
         %>
         <table>
             <tr>
@@ -122,12 +147,11 @@
         %>
         </table>
         <%
-                    }
-                    else {
+                }
+                else if (request.getParameter("excluir") != null) {
         %>
-                        <h3 style="text-align: center">Não há clientes cadastrados<h3>
+        <h3 style="text-align: center">Não há clientes cadastrados</h3>
         <%
-                    }
                 }
             }
             catch(Exception ex) {
