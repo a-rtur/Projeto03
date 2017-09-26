@@ -5,17 +5,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Popper Js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <!-- Bootstrap Js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
         <title>Listar Cadastro de Cliente</title>
     </head>
     <body>
-        <h2 align="center">Clientes Cadastrados</h2><br/>
-        <div align="center">
+        <%@include file="WEB-INF/jspf/menu.jspf" %>
+        <div align="center" id="conteudo">
+            <h2 id="titulo">Clientes Cadastrados</h2><br/>
             <form>
-                Pesquisa avançada:<br/><br/>
                 <input type="text" name="pesquisa" required maxlength="50"/>
-                <input type="submit" name="pesquisar" value="Pesquisar"/>
+                <input type="submit" class="btn btn-dark" name="pesquisar" value="Pesquisar"/>
                 <br/>
                 <br/>
                 <br/>
@@ -58,7 +63,9 @@
                             }
                             else if ((i == Banco.getCliente().size() - 1) && gerarIndice == 1) {
         %>
-                                <h3 style="text-align: center">Cliente não encontrado.</h3>
+                                <script>
+                                    alert("Cliente não encontrado.")
+                                </script>
         <%
                             }
                         }
@@ -113,5 +120,6 @@
             }
         %>
         </div>
+        <%@include file="WEB-INF/jspf/rodape.jspf" %>
     </body>
 </html>
