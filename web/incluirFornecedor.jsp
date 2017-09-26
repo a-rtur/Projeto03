@@ -1,3 +1,4 @@
+<%@page import="Classes.Global"%>
 <%@page import="Classes.fornecedor"%>
 <%@page import="Classes.Banco"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,14 +28,27 @@
                     String endereco = request.getParameter("endereco");
                     String telefone = request.getParameter("telefone");
                     String email = request.getParameter("email");
-                    if (fornecedor.verificarCnpj(cnpj) == true) {                        
+                    if (Global.isNumeric(cnpj) == false) {
+                        
         %>
         
                         <script>
+                            alert("Digite apenas números no campo 'CNPJ'.");
+                        </script>
+        <%                      
+                    }
+                    else if (Global.isNumeric(telefone) == false) {
+        %>
+                        <script>
+                            alert("Digite apenas números no campo 'Telefone'.");
+                        </script>
+        <%                      
+                    }
+                    else if (fornecedor.verificarCnpj(cnpj) == true) {                        
+        %>
+                        <script>
                             alert("CNPJ já cadastrado.");
                         </script>
-        <%           
-                    }
                     else {
                         fornecedor.cadastrarFornecedor(razao,nomef, cnpj, endereco, telefone, email);
         %>
