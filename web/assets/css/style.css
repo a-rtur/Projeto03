@@ -27,9 +27,6 @@ tr {
     max-width:6%;
 }
 
-body {
-	color: #000;
-}
 
 nav {
 	background-color: white;
@@ -66,16 +63,16 @@ a:hover{
 }
 
 #conteudo {
-	margin-top: 62px;
 	font-size: 20px;
 	padding-top: 50px;
+        margin-top: 62px;
+        padding-bottom: 50px;
 }
 
 #footer {
 	text-align: center;
-   	position:fixed;
-   	left:0px;
-   	bottom:0px;
+   	bottom:0;
+        position:absolute;
    	height:60px;
    	width:100%;
    	background:white;
@@ -83,16 +80,27 @@ a:hover{
    	padding-top: 17px;
 }
 
+body {
+	color: #000;
+        height: 100%;
+        margin-bottom:60px;
+}
+
+html {
+    position:relative;
+    min-height: 100%;
+}
+
 #logo {
-	max-width:300px;
+    max-width:300px;
     width: auto;
     height: auto;
 }
 
 #imgLogo {
-	padding:0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	max-width:300px;
+    padding:0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    max-width:300px;
     max-height:300px;
     width: auto;
     height: auto;
@@ -125,6 +133,7 @@ input[type="text"] {
 .btn-dark {
         margin-bottom: 5px;
 	background-color: #496794;
+        min-width: 100px;
 }
 
 #titulo {
