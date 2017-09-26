@@ -10,9 +10,9 @@ public class fornecedor {
     
     public static boolean verificarCnpj(String cnpj){
         boolean retorno = false;
-        for(int i = 0; i <Banco.getFonecedor().size(); i++){
-            if(Banco.getFonecedor().get(i).getCnpj().equals(cnpj)){
-                    i = Banco.getFonecedor().size() + 1;
+        for(int i = 0; i <Banco.getFornecedor().size(); i++){
+            if(Banco.getFornecedor().get(i).getCnpj().equals(cnpj)){
+                    i = Banco.getFornecedor().size() + 1;
                     retorno = true;
             }
             else {
@@ -31,14 +31,14 @@ public class fornecedor {
           f.setEmail(email);
           f.setTelefone(telefone);
           f.setEndereco(endereco);
-          Banco.getFonecedor().add(f);
+          Banco.getFornecedor().add(f);
      }
     
     public static int pesquisarBanco(int valor, String pesquisa){
         boolean podeEntrar = true;
         int retorno = -1;
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFonecedor().get(valor).getRazao().split(" ");
+            String separadorTexto [] = Banco.getFornecedor().get(valor).getRazao().split(" ");
                 for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
@@ -47,7 +47,7 @@ public class fornecedor {
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFonecedor().get(valor).getCnpj().split(" ");
+            String separadorTexto [] = Banco.getFornecedor().get(valor).getCnpj().split(" ");
                 for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
@@ -56,7 +56,7 @@ public class fornecedor {
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFonecedor().get(valor).getEmail().split(" ");
+            String separadorTexto [] = Banco.getFornecedor().get(valor).getEmail().split(" ");
                 for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
@@ -65,7 +65,7 @@ public class fornecedor {
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFonecedor().get(valor).getTelefone().split(" ");
+            String separadorTexto [] = Banco.getFornecedor().get(valor).getTelefone().split(" ");
             for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
@@ -74,7 +74,7 @@ public class fornecedor {
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFonecedor().get(valor).getEndereco().split(" ");
+            String separadorTexto [] = Banco.getFornecedor().get(valor).getEndereco().split(" ");
             for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
