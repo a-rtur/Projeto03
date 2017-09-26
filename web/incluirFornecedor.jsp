@@ -76,7 +76,7 @@
                     Nome Fantasia:<br/>
                     <input type="text" name="nomef" required maxlength="50"/><br/><br/>
                     CNPJ:<br/>
-                    <input type="text" name="cnpj" required maxlength="11"/><br/><br/>
+                    <input type="text" name="cnpj" required maxlength="14"/><br/><br/>
                     Email:<br/>
                     <input type="text" name="email" required maxlength="35"/><br/><br/>
                     Endereço:<br/>
