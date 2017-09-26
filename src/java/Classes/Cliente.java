@@ -8,16 +8,15 @@ public class Cliente {
     private String telefone;
     private String email;
 
-    public static boolean isNumeric(String valor){
-        boolean isNumeric = false;
-        try {
-            int n = Integer.parseInt(valor);
-            isNumeric = true;
-        }
-        catch (Exception ex) {
-            isNumeric = false;
-        }
-        return isNumeric;
+    public static void cadastrarCliente(String nome, String cpf, String rg, String email, String endereco, String telefone){
+        Cliente c = new Cliente();
+        c.setNome(nome);
+        c.setEmail(email);
+        c.setTelefone(telefone);
+        c.setCpf(cpf);
+        c.setRg(rg);
+        c.setEndereco(endereco);
+        Banco.getCliente().add(c);
     }
     
     public static boolean verificarCpf(String cpf){
@@ -46,17 +45,6 @@ public class Cliente {
             }
         }
         return retorno;
-    }
-  
-    public static void cadastrarCliente(String nome, String cpf, String rg, String email, String endereco, String telefone){
-        Cliente c = new Cliente();
-        c.setNome(nome);
-        c.setEmail(email);
-        c.setTelefone(telefone);
-        c.setCpf(cpf);
-        c.setRg(rg);
-        c.setEndereco(endereco);
-        Banco.getCliente().add(c);
     }
     
     public static int pesquisarBanco(int valor, String pesquisa){

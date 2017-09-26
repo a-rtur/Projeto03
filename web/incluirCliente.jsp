@@ -1,5 +1,6 @@
 <%@page import="Classes.Cliente"%>
 <%@page import="Classes.Banco"%>
+<%@page import="Classes.Global"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

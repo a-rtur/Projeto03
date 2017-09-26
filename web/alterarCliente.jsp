@@ -3,6 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Classes.Cliente"%>
 <%@page import="Classes.Banco"%>
+<%@page import="Classes.Global"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +32,7 @@
         <%
             int existente = 0;
             try {
-                if(request.getParameter("pesquisar") != null) {
+                if(request.getParameter("pesquisar") != null && Banco.getCliente().size() != 0) {
                     String pCpf = request.getParameter("textCpf");
                     for(int i = 0; i < Banco.getCliente().size(); i++) {
                         if(Banco.getCliente().get(i).getCpf().equals(pCpf)) {
@@ -66,6 +67,13 @@
         <%
                         }
                     }
+                }
+                else if(Banco.getCliente().size() == 0) {
+        %>
+                            <script>
+                                alert("Não há clientes cadastrados.");
+                            </script>
+        <%
                 }
                 else if(request.getParameter("editar") != null) {
                     try {
