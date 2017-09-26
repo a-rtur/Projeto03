@@ -46,6 +46,7 @@
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th style="width: 5%">Deletar</th>
             </tr>
         <%
                                 }
@@ -58,6 +59,12 @@
                 <td><%=c.getEndereco()%></td>
                 <td><%=c.getTelefone()%></td>
                 <td><%=c.getEmail()%></td>
+                <td>
+                    <form>
+                        <input type="submit" class="btn btn-dark" value="Excluir" name="excluir"/>
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                    </form>
+                </td>
             </tr>
         <%
                             }
@@ -74,6 +81,11 @@
         <%
                     }
                 }
+                else if (request.getParameter("excluir") != null) {
+                    int index = Integer.parseInt(request.getParameter("i"));
+                    Banco.getCliente().remove(index);
+                    String pesquisa = request.getParameter("pesquisa");
+                }
                 else {
                     if (Banco.getCliente().size() != 0) {
         %>
@@ -85,6 +97,7 @@
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th style="width: 5%">Deletar</th>
             </tr>
         <%
                             for (int i = 0; i<Banco.getCliente().size(); i++) {
@@ -97,6 +110,12 @@
                 <td><%=c.getEndereco()%></td>
                 <td><%=c.getTelefone()%></td>
                 <td><%=c.getEmail()%></td>
+                <td>
+                    <form>
+                        <input type="submit" class="btn btn-dark" value="Excluir" name="excluir"/>
+                        <input type="hidden" name="i" value="<%=i%>"/>
+                    </form>
+                </td>
             </tr>
         <%
                             }
