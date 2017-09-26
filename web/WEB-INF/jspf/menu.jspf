@@ -15,7 +15,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="incluirCliente.jsp">Cadastrar</a>
                   <a class="dropdown-item" href="alterarCliente.jsp">Alterar</a>
-                  <a class="dropdown-item" href="excluirCliente.jsp">Excluir</a>
                   <a class="dropdown-item" href="listarCliente.jsp">Listar</a>
                 </div>
             </li>
@@ -24,7 +23,6 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#">Cadastrar</a>
                   <a class="dropdown-item" href="#">Alterar</a>
-                  <a class="dropdown-item" href="#">Excluir</a>
                   <a class="dropdown-item" href="#">Listar</a>
                 </div>
             </li>
