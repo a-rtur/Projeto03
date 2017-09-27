@@ -1,0 +1,159 @@
+table {
+    border-collapse: collapse;
+    border: 1px groove;
+    width:70%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+h3 {
+    color: #496794;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+    border: 1px groove;
+    color: #496794;
+}
+
+th {
+    padding: 8px;
+    text-align: center;
+    border: 1px groove;
+    background-color: #496794;
+    color: white;
+}
+
+tr {
+    max-width:6%;
+}
+
+
+nav {
+	background-color: white;
+	font-size: 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 10px 10px;
+}
+
+ul {
+	margin-right: 100px;
+}
+
+li {
+	padding-left: 5px;
+}
+
+a {
+	text-decoration: none;
+	margin: 0 5px;
+	padding: 10px;
+}
+			
+a:link{
+	color: black;
+}
+
+a:visited{
+	color: black;
+}
+
+a:hover{
+	color: black;
+	background: #F7F7F7;
+}
+
+#conteudo {
+	font-size: 20px;
+	padding-top: 50px;
+        margin-top: 62px;
+        padding-bottom: 50px;
+}
+
+#footer {
+	text-align: center;
+   	bottom:0;
+        position:absolute;
+   	height:60px;
+   	width:100%;
+   	background:white;
+   	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   	padding-top: 17px;
+}
+
+body {
+	color: #000;
+        height: 100%;
+        margin-bottom:60px;
+}
+
+html {
+    position:relative;
+    min-height: 100%;
+}
+
+#logo {
+    max-width:300px;
+    width: auto;
+    height: auto;
+}
+#fotoGustavo{
+    transform: rotate(180deg);
+}
+
+
+.nomeFoto{
+    width: 10%;
+    text-align: center;
+}
+
+
+#tabelaDeFotos{
+    margin-left: 17%;
+    
+}
+
+#imgLogo {
+    padding:0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    max-width:300px;
+    max-height:300px;
+    width: auto;
+    height: auto;
+    margin-left: 100px;
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 1px groove;
+    border-radius: 8px;
+    box-shadow:0 0 10px #999;
+    width: 335px;
+    margin: 0px auto;
+
+}
+
+input[type="text"] {
+        width: 300px;
+	height:35px;
+	font-size: 17px;
+	padding-left: 10px;
+}
+
+.btn-dark {
+        margin-bottom: 5px;
+	background-color: #496794;
+        min-width: 100px;
+}
+
+#titulo {
+	text-align:center;
+	padding-bottom: 15px;
+	color: #496794;
+        text-shadow: 2px 1px 0px rgba(152, 150, 150, 0.68);
+}
