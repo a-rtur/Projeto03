@@ -1,8 +1,8 @@
-<%@page import="Classes.fornecedor"%>
+<%@page import="Classes.Fornecedor"%>
 <%@page import="Classes.Banco"%>
 <%@page import="Classes.Global"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,14 +13,14 @@
         <!-- Bootstrap Js -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
-        <title>Listar Cadastro de Fornecedores</title>
+        <title>Listar Cadastro de Fornecedor</title>
     </head>
     <body>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <div align="center" id="conteudo">
             <h2 id="titulo">Fornecedores Cadastrados</h2><br/>
             <form>
-                <input type="text" name="pesquisa" required maxlength="50"/>
+                <input type="text" name="pesquisa" required maxlength="50" placeholder="Digite algum dado sobre o cliente."/>
                 <input type="submit" class="btn btn-dark" name="pesquisar" value="Pesquisar"/>
                 <br/>
                 <br/>
@@ -31,11 +31,11 @@
             try {
                 boolean gerarIndice = true;
                 boolean achouValor = false;
-                if (request.getParameter("pesquisar") != null && Banco.getFornecedor().size() != 0){
+                if (request.getParameter("pesquisar") != null && Banco.getFornecedor().size() != 0) {
                     String pesquisa = request.getParameter("pesquisa");
-                    for (int i = 0; i <Banco.getFornecedor().size(); i++){
-                        if ((fornecedor.pesquisarBanco(i, pesquisa)!= -1) && gerarIndice == true) {
-                            fornecedor f = Banco.getFornecedor().get(i);
+                    for (int i = 0; i<Banco.getFornecedor().size(); i++) {
+                        if ((Fornecedor.pesquisarBanco(i, pesquisa) != -1) && gerarIndice == true) {
+                            Fornecedor f = Banco.getFornecedor().get(i);
                             gerarIndice = false;
                             achouValor = true;
         %>
@@ -45,17 +45,17 @@
                 <th>Nome Fantasia</th>
                 <th>CNPJ</th>
                 <th>Email</th>
+                <th>Endereço</th>
                 <th>Telefone</th>
-                <th>Endereçol</th>
                 <th style="width: 5%">Deletar</th>
             </tr>
             <tr>
                 <td><%=f.getRazao()%></td>
-                <td><%=f.getNomef()%></td>
+                <td><%=f.getNome()%></td>
                 <td><%=f.getCnpj()%></td>
                 <td><%=f.getEmail()%></td>
-                <td><%=f.getTelefone()%></td>
                 <td><%=f.getEndereco()%></td>
+                <td><%=f.getTelefone()%></td>
                 <td>
                     <form>
                         <input type="submit" class="btn btn-dark" value="Excluir" name="excluir"/>
@@ -65,12 +65,12 @@
             </tr>
         <%
                         }
-                        else if ((fornecedor.pesquisarBanco(i, pesquisa) != -1) && gerarIndice == false) {
-                            fornecedor f = Banco.getFornecedor().get(i);
-       %>
+                        else if ((Fornecedor.pesquisarBanco(i, pesquisa) != -1) && gerarIndice == false) {
+                            Fornecedor f = Banco.getFornecedor().get(i);
+        %>
              <tr>
                 <td><%=f.getRazao()%></td>
-                <td><%=f.getNomef()%></td>
+                <td><%=f.getNome()%></td>
                 <td><%=f.getCnpj()%></td>
                 <td><%=f.getEmail()%></td>
                 <td><%=f.getEndereco()%></td>
@@ -99,7 +99,6 @@
                 else if (request.getParameter("excluir") != null) {
                     int index = Integer.parseInt(request.getParameter("i"));
                     Banco.getFornecedor().remove(index);
-
                 }
                 else if (Banco.getFornecedor().size() == 0 && request.getParameter("pesquisar") != null) {
         %>
@@ -122,28 +121,28 @@
                 <th>Nome Fantasia</th>
                 <th>CNPJ</th>
                 <th>Email</th>
-                <th>Telefone</th>
                 <th>Endereço</th>
+                <th>Telefone</th>
                 <th style="width: 5%">Deletar</th>
             </tr>
         <%
                             for (int i = 0; i<Banco.getFornecedor().size(); i++) {
-                                fornecedor f = Banco.getFornecedor().get(i);
+                                Fornecedor f = Banco.getFornecedor().get(i);
         %>
             <tr>
                 <td><%=f.getRazao()%></td>
-                <td><%=f.getNomef()%></td>
+                <td><%=f.getNome()%></td>
                 <td><%=f.getCnpj()%></td>
                 <td><%=f.getEmail()%></td>
-                <td><%=f.getTelefone()%></td>
                 <td><%=f.getEndereco()%></td>
+                <td><%=f.getTelefone()%></td>
                 <td>
                     <form>
                         <input type="submit" class="btn btn-dark" value="Excluir" name="excluir"/>
                         <input type="hidden" name="i" value="<%=i%>"/>
                     </form>
                 </td>
-            </tr>
+            </tr>    
         <%
                             }
         %>

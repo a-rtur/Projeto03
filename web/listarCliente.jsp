@@ -20,7 +20,7 @@
         <div align="center" id="conteudo">
             <h2 id="titulo">Clientes Cadastrados</h2><br/>
             <form>
-                <input type="text" name="pesquisa" required maxlength="50"/>
+                <input type="text" name="pesquisa" required maxlength="50" placeholder="Digite algum dado sobre o cliente."/>
                 <input type="submit" class="btn btn-dark" name="pesquisar" value="Pesquisar"/>
                 <br/>
                 <br/>
