@@ -6,6 +6,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' type='text/css' href='assets/css/animate.css'>
+        <script type='text/javascript' src='assets/js/wow.js'></script>
+        <script>new WOW().init();</script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Popper Js -->
@@ -15,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
         <title>Alterar Cadastro do Cliente</title>
     </head>
-    <body>
+    <body class='wow fadeIn' data-wow-duration='1s'>
         <%@include file="WEB-INF/jspf/menu.jspf" %>
         <div id="conteudo">
             <h2 id="titulo">Alterar Cadastro do Cliente</h2><br/>
@@ -35,7 +38,7 @@
                     for(int i = 0; i < Banco.getCliente().size(); i++) {
                         if(Banco.getCliente().get(i).getCpf().equals(tCpf)) {
     %>
-                            <fieldset>
+                            <fieldset class='wow bounceInDown'>
                                 <div id="titulo"><h3>Alterar Cadastro</h3></div>
                                 <form>
                                     Nome:<br/>
