@@ -12,4 +12,12 @@ public class Global {
         }
         return isNumeric;
     }
+    
+    public static boolean isEmpty(String valor){
+        boolean isEmpty = false;
+        if (valor==null || valor.trim().equals("")) {
+            isEmpty = true;
+        }
+        return isEmpty;
+    }
 }

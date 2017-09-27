@@ -64,6 +64,13 @@
                         </script>
         <%           
                     }
+                    else if (Global.isEmpty(nome) == true || Global.isEmpty(cpf) == true || Global.isEmpty(rg) == true || Global.isEmpty(email) == true || Global.isEmpty(endereco) == true || Global.isEmpty(telefone) == true) {
+        %>
+                        <script>
+                            alert("Não deixe nenhum campo em branco.");
+                        </script>
+        <%           
+                    }
                     else {
                         Cliente.cadastrarCliente(nome, cpf, rg, email, endereco, telefone);
         %>

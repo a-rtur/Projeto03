@@ -117,6 +117,13 @@
                             </script>
         <%           
                         }
+                        else if (Global.isEmpty(nome) == true || Global.isEmpty(razao) == true || Global.isEmpty(cnpj) == true || Global.isEmpty(email) == true || Global.isEmpty(endereco) == true || Global.isEmpty(telefone) == true) {
+        %>
+                            <script>
+                                alert("Não deixe nenhum campo em branco.");
+                            </script>
+        <%           
+                        }
                         else {
                             Banco.getFornecedor().get(Banco.getIndex()).setRazao(razao);
                             Banco.getFornecedor().get(Banco.getIndex()).setNome(nome);
