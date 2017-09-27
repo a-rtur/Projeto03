@@ -31,44 +31,64 @@ public class Fornecedor {
           f.setTelefone(telefone);
           f.setEndereco(endereco);
           Banco.getFornecedor().add(f);
-     }
+    }
     
     public static int pesquisarBanco(int valor, String pesquisa){
         boolean podeEntrar = true;
         int retorno = -1;
         if (podeEntrar == true) {
             String separadorTexto [] = Banco.getFornecedor().get(valor).getNome().split(" ");
-                for (int i = 0; i < separadorTexto.length; i++) {
+            for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getFornecedor().get(valor).getNome().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
             String separadorTexto [] = Banco.getFornecedor().get(valor).getRazao().split(" ");
-                for (int i = 0; i < separadorTexto.length; i++) {
+            for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getFornecedor().get(valor).getRazao().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
             String separadorTexto [] = Banco.getFornecedor().get(valor).getCnpj().split(" ");
-                for (int i = 0; i < separadorTexto.length; i++) {
+            for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getFornecedor().get(valor).getCnpj().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
             String separadorTexto [] = Banco.getFornecedor().get(valor).getEmail().split(" ");
-                for (int i = 0; i < separadorTexto.length; i++) {
+            for (int i = 0; i < separadorTexto.length; i++) {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getFornecedor().get(valor).getEmail().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
@@ -79,6 +99,11 @@ public class Fornecedor {
                     retorno = valor;
                     podeEntrar = false;
                 }
+                else if (Banco.getFornecedor().get(valor).getTelefone().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
+                }
             }
         }
         if (podeEntrar == true) {
@@ -87,6 +112,11 @@ public class Fornecedor {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getFornecedor().get(valor).getEndereco().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }

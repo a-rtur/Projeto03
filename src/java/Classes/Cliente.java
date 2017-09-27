@@ -57,6 +57,11 @@ public class Cliente {
                     retorno = valor;
                     podeEntrar = false;
                 }
+                else if (Banco.getCliente().get(valor).getNome().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
+                }
             }
         }
         if (podeEntrar == true) {
@@ -65,6 +70,11 @@ public class Cliente {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getCliente().get(valor).getCpf().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
@@ -75,6 +85,11 @@ public class Cliente {
                     retorno = valor;
                     podeEntrar = false;
                 }
+                else if (Banco.getCliente().get(valor).getRg().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
+                }
             }
         }
         if (podeEntrar == true) {
@@ -83,6 +98,11 @@ public class Cliente {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getCliente().get(valor).getEmail().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
@@ -93,6 +113,11 @@ public class Cliente {
                     retorno = valor;
                     podeEntrar = false;
                 }
+                else if (Banco.getCliente().get(valor).getTelefone().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
+                }
             }
         }
         if (podeEntrar == true) {
@@ -101,6 +126,11 @@ public class Cliente {
                 if (separadorTexto[i].equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
+                }
+                else if (Banco.getCliente().get(valor).getEndereco().equals(pesquisa)) {
+                    retorno = valor;
+                    podeEntrar = false;
+                    i = separadorTexto.length + 1;
                 }
             }
         }
