@@ -37,86 +37,110 @@ public class Fornecedor {
         boolean podeEntrar = true;
         int retorno = -1;
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getNome().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro[] = Banco.getFornecedor().get(valor).getNome().split("");
+            String separadorPalavras[] = Banco.getFornecedor().get(valor).getNome().split(" ");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
                 }
-                else if (Banco.getFornecedor().get(valor).getNome().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
+            }
+            if (separadorPalavras.length > 1) {
+                for (int i = 0; i < separadorPalavras.length; i++) {
+                    String separadorCaracterePalavra [] = separadorPalavras[i].split("");
+                    String acumuladorPalavras = "";
+                    for (int j = 0; j < separadorCaracterePalavra.length; j++) {
+                        acumuladorPalavras = acumuladorPalavras + separadorCaracterePalavra[j];
+                        if (acumuladorPalavras.equals(pesquisa)) {
+                            retorno = valor;
+                            podeEntrar = false;
+                        }
+                    }
                 }
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getRazao().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro[] = Banco.getFornecedor().get(valor).getRazao().split("");
+            String separadorPalavras[] = Banco.getFornecedor().get(valor).getRazao().split(" ");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
                 }
-                else if (Banco.getFornecedor().get(valor).getRazao().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
+            }
+            if (separadorPalavras.length > 1) {
+                for (int i = 0; i < separadorPalavras.length; i++) {
+                    String separadorCaracterePalavra [] = separadorPalavras[i].split("");
+                    String acumuladorPalavras = "";
+                    for (int j = 0; j < separadorCaracterePalavra.length; j++) {
+                        acumuladorPalavras = acumuladorPalavras + separadorCaracterePalavra[j];
+                        if (acumuladorPalavras.equals(pesquisa)) {
+                            retorno = valor;
+                            podeEntrar = false;
+                        }
+                    }
                 }
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getCnpj().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro [] = Banco.getFornecedor().get(valor).getCnpj().split("");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
-                }
-                else if (Banco.getFornecedor().get(valor).getCnpj().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getEmail().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro [] = Banco.getFornecedor().get(valor).getEmail().split("");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
-                }
-                else if (Banco.getFornecedor().get(valor).getEmail().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getTelefone().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro [] = Banco.getFornecedor().get(valor).getTelefone().split("");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
-                }
-                else if (Banco.getFornecedor().get(valor).getTelefone().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
                 }
             }
         }
         if (podeEntrar == true) {
-            String separadorTexto [] = Banco.getFornecedor().get(valor).getEndereco().split(" ");
-            for (int i = 0; i < separadorTexto.length; i++) {
-                if (separadorTexto[i].equals(pesquisa)) {
+            String separadorInteiro[] = Banco.getFornecedor().get(valor).getEndereco().split("");
+            String separadorPalavras[] = Banco.getFornecedor().get(valor).getEndereco().split(" ");
+            String acumuladorInteiro = "";
+            for (int i = 0; i < separadorInteiro.length; i++) {
+                acumuladorInteiro = acumuladorInteiro + separadorInteiro[i];
+                if (acumuladorInteiro.equals(pesquisa)) {
                     retorno = valor;
                     podeEntrar = false;
                 }
-                else if (Banco.getFornecedor().get(valor).getEndereco().equals(pesquisa)) {
-                    retorno = valor;
-                    podeEntrar = false;
-                    i = separadorTexto.length + 1;
+            }
+            if (separadorPalavras.length > 1) {
+                for (int i = 0; i < separadorPalavras.length; i++) {
+                    String separadorCaracterePalavra [] = separadorPalavras[i].split("");
+                    String acumuladorPalavras = "";
+                    for (int j = 0; j < separadorCaracterePalavra.length; j++) {
+                        acumuladorPalavras = acumuladorPalavras + separadorCaracterePalavra[j];
+                        if (acumuladorPalavras.equals(pesquisa)) {
+                            retorno = valor;
+                            podeEntrar = false;
+                        }
+                    }
                 }
             }
         }
