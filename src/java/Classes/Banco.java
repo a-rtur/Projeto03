@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Banco {
     private static ArrayList<Cliente> clientes;
-    private static ArrayList<fornecedor> fornecedores;
+    private static ArrayList<Fornecedor> fornecedores;
     private static int index;
     
     public static ArrayList<Cliente> getCliente(){
@@ -14,7 +14,7 @@ public class Banco {
         return clientes;
     }
     
-    public static ArrayList<fornecedor> getFornecedor(){
+    public static ArrayList<Fornecedor> getFornecedor(){
         if (fornecedores==null){
             fornecedores = new ArrayList<>();
         }
@@ -27,8 +27,5 @@ public class Banco {
 
     public static void setIndex(int valor) {
         index = valor;
-    }
-    
-
-    
+    }  
 }
