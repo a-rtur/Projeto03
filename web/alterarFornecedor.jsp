@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="Classes.fornecedor"%>
+<%@page import="Classes.Fornecedor"%>
 <%@page import="Classes.Banco"%>
 <%@page import="Classes.Global"%>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
                 String tCnpj = request.getParameter("textCnpj");
                 if(request.getParameter("pesquisar") != null && Banco.getFornecedor().size() != 0 && Global.isNumeric(tCnpj) == true) {
                     for(int i = 0; i < Banco.getFornecedor().size(); i++) {
-                        if(Banco.getCliente().get(i).getCpf().equals(tCnpj)) {
+                        if(Banco.getFornecedor().get(i).getCnpj().equals(tCnpj)) {
     %>
                             <fieldset>
                                 <div id="titulo"><h3>Alterar Cadastro</h3></div>
@@ -41,7 +41,7 @@
                                     Razão social:<br/>
                                     <input type="text" name="razao" required maxlength="50" value="<%=Banco.getFornecedor().get(i).getRazao()%>"/><br/><br/>
                                     Nome Fantasia:<br/>
-                                    <input type="text" name="nomef" required maxlength="50" value="<%=Banco.getFornecedor().get(i).getNomef()%>"/><br/><br/>
+                                    <input type="text" name="nome" required maxlength="50" value="<%=Banco.getFornecedor().get(i).getNome()%>"/><br/><br/>
                                     CNPJ:<br/>
                                     <input type="text" name="cnpj" required maxlength="14" value="<%=Banco.getFornecedor().get(i).getCnpj()%>"/><br/><br/>
                                     Email:<br/>
@@ -83,7 +83,7 @@
                 else if(request.getParameter("editar") != null) {
                     try {
                         String razao = request.getParameter("razao");
-                        String nomef = request.getParameter("nomef");
+                        String nome = request.getParameter("nome");
                         String cnpj = request.getParameter("cnpj");
                         String email = request.getParameter("email");
                         String telefone = request.getParameter("telefone");
@@ -91,6 +91,7 @@
                         String cnpjAntigo = Banco.getFornecedor().get(Banco.getIndex()).getCnpj();
                         Banco.getFornecedor().get(Banco.getIndex()).setCnpj("reset");
                         if (Global.isNumeric(cnpj) == false){
+                            Banco.getFornecedor().get(Banco.getIndex()).setCnpj(cnpjAntigo);
         %>
                             <script>
                                 alert("Digite apenas números no campo 'CNPJ'.");
@@ -98,13 +99,14 @@
         <%
                         }
                         else if (Global.isNumeric(telefone) == false){
+                            Banco.getFornecedor().get(Banco.getIndex()).setCnpj(cnpjAntigo);
         %>
                             <script>
                                 alert("Digite apenas números no campo 'Telefone'.");
                             </script>
         <%
                         }
-                        else if (fornecedor.verificarCnpj(cnpj) == true) {
+                        else if (Fornecedor.verificarCnpj(cnpj) == true) {
                             Banco.getFornecedor().get(Banco.getIndex()).setCnpj(cnpjAntigo);
         %>
                             <script>
@@ -114,7 +116,7 @@
                         }
                         else {
                             Banco.getFornecedor().get(Banco.getIndex()).setRazao(razao);
-                            Banco.getFornecedor().get(Banco.getIndex()).setNomef(nomef);
+                            Banco.getFornecedor().get(Banco.getIndex()).setNome(nome);
                             Banco.getFornecedor().get(Banco.getIndex()).setCnpj(cnpj);
                             Banco.getFornecedor().get(Banco.getIndex()).setEmail(email);
                             Banco.getFornecedor().get(Banco.getIndex()).setTelefone(telefone);
