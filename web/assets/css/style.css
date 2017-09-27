@@ -152,6 +152,31 @@ input[type="text"] {
 	padding-bottom: 15px;
 	color: #496794;
         text-shadow: 2px 1px 0px rgba(152, 150, 150, 0.68);
-        margin-top:50px;
-        margin-bottom:40px;
+        margin-top:55px;
+        margin-bottom:65px;
+}
+
+#marginfoto {
+    margin-bottom: 20px;
+}
+
+#corNomes {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.cards{
+    padding: 20px;
+    margin-bottom:50px;
+    background: #496794;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color: #fff;
+    position: relative;
+    border-radius: 8px;
+}
+
+.cards img{
+    max-height: 250px;
+    border: 2px solid #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
