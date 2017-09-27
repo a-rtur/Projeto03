@@ -1,5 +1,5 @@
 <%@page import="Classes.Global"%>
-<%@page import="Classes.fornecedor"%>
+<%@page import="Classes.Fornecedor"%>
 <%@page import="Classes.Banco"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,18 +20,15 @@
         
         <%
             try {
-                
                 if(request.getParameter("add") != null) {
                     String razao = request.getParameter("razao");
-                    String nomef = request.getParameter("nome");
+                    String nome = request.getParameter("nome");
                     String cnpj = request.getParameter("cnpj");
                     String endereco = request.getParameter("endereco");
                     String telefone = request.getParameter("telefone");
                     String email = request.getParameter("email");
-                    if (Global.isNumeric(cnpj) == false) {
-                        
+                    if (Global.isNumeric(cnpj) == false) {                
         %>
-        
                         <script>
                             alert("Digite apenas números no campo 'CNPJ'.");
                         </script>
@@ -44,13 +41,15 @@
                         </script>
         <%                      
                     }
-                    else if (fornecedor.verificarCnpj(cnpj) == true) {                        
+                    else if (Fornecedor.verificarCnpj(cnpj) == true) {                        
         %>
                         <script>
                             alert("CNPJ já cadastrado.");
                         </script>
+        <%          
+                    }
                     else {
-                        fornecedor.cadastrarFornecedor(razao,nomef, cnpj, endereco, telefone, email);
+                        Fornecedor.cadastrarFornecedor(razao, nome, cnpj, email, endereco, telefone);
         %>
                         <script>
                             alert("Cadastro efetuado com sucesso.");
@@ -74,7 +73,7 @@
                     Razão Social:<br/>
                     <input type="text" name="razao" required maxlength="50"/><br/><br/>
                     Nome Fantasia:<br/>
-                    <input type="text" name="nomef" required maxlength="50"/><br/><br/>
+                    <input type="text" name="nome" required maxlength="50"/><br/><br/>
                     CNPJ:<br/>
                     <input type="text" name="cnpj" required maxlength="14"/><br/><br/>
                     Email:<br/>
@@ -83,7 +82,7 @@
                     <input type="text" name="endereco" required maxlength="50"/><br/><br/>
                     Telefone:<br/>
                     <input type="text" name="telefone" required maxlength="15"/><br/><br/>
-                    <center><input type="submit" name="add" class="btn btn-dark" value="Adicionar"/></center>
+                    <center><input type="submit" name="add" class="btn btn-dark" value="Cadastrar"/></center>
                 </form>
             </fieldset>
         </div>

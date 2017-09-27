@@ -95,7 +95,7 @@
                     <input type="text" name="telefone" required maxlength="15" data-mask="(00) 0000-0000" data-mask-selectonfocus="true"/><br/><br/>
                     Email:<br/>
                     <input type="text" name="email" required maxlength="35"/><br/><br/>
-                    <center><input type="submit" name="add" class="btn btn-dark" value="Adicionar"/></center>
+                    <center><input type="submit" name="add" class="btn btn-dark" value="Cadastrar"/></center>
                 </form>
             </fieldset>
         </div>
