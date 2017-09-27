@@ -93,6 +93,8 @@
                         Banco.getCliente().get(Banco.getIndex()).setCpf("reset");
                         Banco.getCliente().get(Banco.getIndex()).setRg("reset");
                         if (Global.isNumeric(cpf) == false){
+                            Banco.getCliente().get(Banco.getIndex()).setCpf(cpfAntigo);
+                            Banco.getCliente().get(Banco.getIndex()).setRg(rgAntigo);
         %>
                             <script>
                                 alert("Digite apenas números no campo 'CPF'.");
@@ -100,6 +102,8 @@
         <%
                         }
                         else if (Global.isNumeric(rg) == false){
+                            Banco.getCliente().get(Banco.getIndex()).setCpf(cpfAntigo);
+                            Banco.getCliente().get(Banco.getIndex()).setRg(rgAntigo);
         %>
                             <script>
                                 alert("Digite apenas números no campo 'RG'.");
@@ -107,6 +111,8 @@
         <%
                         }
                         else if (Global.isNumeric(telefone) == false){
+                            Banco.getCliente().get(Banco.getIndex()).setCpf(cpfAntigo);
+                            Banco.getCliente().get(Banco.getIndex()).setRg(rgAntigo);
         %>
                             <script>
                                 alert("Digite apenas números no campo 'Telefone'.");
