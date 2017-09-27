@@ -21,9 +21,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Fornecedor</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Cadastrar</a>
-                  <a class="dropdown-item" href="#">Alterar</a>
-                  <a class="dropdown-item" href="#">Listar</a>
+                  <a class="dropdown-item" href="incluirFornecedor.jsp">Cadastrar</a>
+                  <a class="dropdown-item" href="alterarFornecedor.jsp">Alterar</a>
+                  <a class="dropdown-item" href="listarFornecedor.jsp">Listar</a>
                 </div>
             </li>
         </ul>
